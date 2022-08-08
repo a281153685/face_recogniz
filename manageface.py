@@ -15,12 +15,13 @@ from PyQt5.QtCore import *
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
-
+database = 'studentface'
+password = 'hzt123'
 engine = create_engine('mysql+pymysql://root:hzt123@localhost:3306/studentface')
 conn = pymysql.connect(host='localhost',
                        user='root',
-                       password='hzt123',
-                       database='studentface',
+                       password=password,
+                       database=database,
                        port=3306,
                        charset='utf8')
 

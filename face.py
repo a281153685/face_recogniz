@@ -119,10 +119,12 @@ def findCosineSimilarity(source_representation, test_representation):
     return (a / (np.sqrt(b) * np.sqrt(c)))
 
 
+database = 'studentface'
+password = 'hzt123'
 conn = pymysql.connect(host='localhost',
                        user='root',
-                       password='hzt123',
-                       database='studentface',
+                       password=password,
+                       database=database,
                        port=3306,
                        charset='utf8')
 
@@ -142,6 +144,7 @@ def queryPersonInfoMysql(name, df):
             except:
                 print('插入数据库错误，插入语句如下：', sql_insert)
             cur.close()
-            data_info = "根据最新数据库信息，查询到如下信息\n姓名: " + name + "\n 更新前余额为: " + str(balance) + "\n  更新后余额为：" + str(balance_new)
+            data_info = "根据最新数据库信息，查询到如下信息\n姓名: " + name + "\n 更新前余额为: " + str(balance) + "\n  更新后余额为：" + str(
+                balance_new)
             break
     return data_info
