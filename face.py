@@ -77,7 +77,7 @@ def preprocess_image(image_path):
     return img
 
 
-engine = create_engine('mysql+pymysql://root:hzt123@localhost:3306/studentface')
+engine  = create_engine('mysql+pymysql://root:hzt123@localhost:3306/studentface')
 
 
 # 从数据库读取信息，然后进行相应的人脸特征提取，并生成人脸特征
